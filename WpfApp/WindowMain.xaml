@@ -7,7 +7,7 @@
         xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="350" ResizeMode="NoResize">
+        Title="MainWindow" Height="300" Width="400" ResizeMode="NoResize">
     <Window.Resources>
         <collections:ArrayList x:Key="Days">
             <system:String>Понедельник</system:String>
@@ -19,48 +19,41 @@
             <system:String>Воскресенье</system:String>
         </collections:ArrayList>
     </Window.Resources>
-    <Grid x:Name="LayoutGrid" Margin="0" ShowGridLines="True">
+    <Grid x:Name="LayoutGrid" Margin="0" ShowGridLines="False">
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="125"></ColumnDefinition>
-            <ColumnDefinition Width="125"></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" x:Name="ButtonShowMessage" Content="ShowMessage" VerticalAlignment="Top" 
-            Grid.ColumnSpan="2"
-            Margin="10,10,10,0" Click="Button_Click" 
+        <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" x:Name="ButtonShowMessage" Content="ShowMessage" 
+            Click="Button_Click" FontSize="24" 
         >
-            <Button.HorizontalAlignment>
-                <HorizontalAlignment>Stretch</HorizontalAlignment>
-            </Button.HorizontalAlignment>
             <Button.Background>
                 <SolidColorBrush Opacity="0.5" Color="Lime" />
             </Button.Background>
         </Button>
-        <TextBox Grid.Column="2" Grid.Row="0" x:Name="FieldSome" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" 
-            Margin="10,10,10,0"
+        <TextBox Grid.Column="2" Grid.Row="0" x:Name="FieldSome" TextWrapping="Wrap" Text="TextBox" TextAlignment="Center" FontSize="24" 
         />
-        <Button Grid.Column="0" Grid.Row="1" x:Name="ButtonCreateNew" Content="Create new button" VerticalAlignment="Top" 
-            Grid.ColumnSpan="2"
-            Margin="10,10,10,0" Click="ButtonCreateNewButton_Click" RenderTransformOrigin="0.5,0.5"
-        >
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-7.56"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
+        <Button Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" FontSize="24">
             <Button.Content>
                 <local:ClassPhone Name="Nokia" Price="5123" />
             </Button.Content>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="2" x:Name="ButtonCreateNewWindow" Content="Create new Window" 
+            Click="ButtonCreateNewWindow_Click"  Grid.ColumnSpan="3" FontSize="24">
+        </Button>
+        <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Content="GridSplitter" FontSize="24"
+            Click="ButtonCreateGridSplitter_Click">
+        </Button>
+        <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Content="StackPanel" FontSize="24"
+            Click="ButtonCreateStackPanel_Click">
         </Button>
     </Grid>
 </Window>
