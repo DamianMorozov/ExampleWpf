@@ -19,17 +19,11 @@
         </Grid.RowDefinitions>
         <Button Grid.Column="0" Content="Left button" FontSize="24"></Button>
         <GridSplitter Grid.Column="1" Grid.Row="0" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch"></GridSplitter>
-        <GridSplitter Grid.Row="1" Grid.ColumnSpan="3" Height="3"
+        <GridSplitter Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" Height="3"
             HorizontalAlignment="Stretch" VerticalAlignment="Center" />
-        <Canvas Grid.Column="0" Grid.Row="0">
-            <TextBlock>Левая панель</TextBlock>
+        <Canvas Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2" Background="#dfffff">
+            <TextBlock FontSize="24">Bottom panel</TextBlock>
         </Canvas>
-        <Canvas Grid.Column="2" Grid.Row="0" Background="LightGreen">
-            <TextBlock>Правая панель</TextBlock>
-        </Canvas>
-        <Canvas Grid.ColumnSpan="3" Grid.Row="2" Background="#dfffff">
-            <TextBlock Canvas.Left="20" FontSize="24">Bottom panel</TextBlock>
-        </Canvas>
-        <Button Grid.Column="2" Content="Right button" FontSize="24"></Button>
+        <Button Grid.Row="0" Grid.Column="2" Content="Right button" FontSize="24"></Button>
     </Grid>
 </Window>

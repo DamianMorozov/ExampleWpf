@@ -48,8 +48,8 @@
                 <local:ClassPhone Name="Nokia" Price="5123" />
             </Button.Content>
         </Button>
-        <Button Grid.Column="0" Grid.Row="2" x:Name="ButtonCreateNewWindow" Content="Create new Window" 
-            Click="ButtonCreateNewWindow_Click"  Grid.ColumnSpan="3" FontSize="24">
+        <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Content="UniformGrid" 
+            Click="ButtonCreateUniformGrid_Click" FontSize="24">
         </Button>
         <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Content="GridSplitter" FontSize="24"
             Click="ButtonCreateGridSplitter_Click">

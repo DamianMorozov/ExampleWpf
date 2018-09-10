@@ -18,7 +18,7 @@ namespace WpfApp
             MessageBox.Show(FieldSome.Text);
         }
 
-        private void ButtonCreateNewWindow_Click(object sender, RoutedEventArgs e)
+        private void ButtonCreateUniformGrid_Click(object sender, RoutedEventArgs e)
         {
             var window = new WindowUniformGrid
             {
