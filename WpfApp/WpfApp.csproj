@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="WindowCanvas.xaml.cs">
+      <DependentUpon>WindowCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowDockPanel.xaml.cs">
+      <DependentUpon>WindowDockPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowGridSplitter.xaml.cs">
       <DependentUpon>WindowGridSplitter.xaml</DependentUpon>
     </Compile>
@@ -64,6 +70,17 @@
     <Compile Include="WindowUniformGrid.xaml.cs">
       <DependentUpon>WindowUniformGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowWrapPanel.xaml.cs">
+      <DependentUpon>WindowWrapPanel.xaml</DependentUpon>
+    </Compile>
+    <Page Include="WindowCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowDockPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowGridSplitter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowUniformGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowWrapPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp.WindowWrapPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="WindowWrapPanel" Height="300" Width="400" ResizeMode="NoResize">
+    <WrapPanel ItemHeight="50" ItemWidth="120" Orientation="Vertical">
+        <Button Background="AliceBlue" Content="Button 1" FontSize="24" Height="50"></Button>
+        <Button Background="Bisque" Content="Button 2" FontSize="24" Height="50"></Button>
+        <Button Background="AntiqueWhite" Content="Button 3" FontSize="24" Height="40"></Button>
+        <Button Background="Aqua" Content="Button 4" FontSize="24" Height="30"></Button>
+        <Button Background="Beige" Content="Button 5" FontSize="24" Height="40"></Button>
+        <Button Background="Bisque" Content="Button 6" FontSize="24" Height="50"></Button>
+        <Button Background="Blue" Content="Button 7" FontSize="24" Height="50"></Button>
+        <Button Background="BlueViolet" Content="Button 8" FontSize="24" Height="50"></Button>
+        <Button Background="Cornsilk" Content="Button 9" FontSize="24" Height="50"></Button>
+        <Button Background="DarkTurquoise" Content="Button 10" FontSize="24" Height="50"></Button>
+        <Button Background="Crimson" Content="Button 11" FontSize="24" Height="50"></Button>
+    </WrapPanel>
+</Window>

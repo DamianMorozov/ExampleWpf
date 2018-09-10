@@ -20,32 +20,62 @@ namespace WpfApp
 
         private void ButtonCreateNewWindow_Click(object sender, RoutedEventArgs e)
         {
-            var windowUniformGrid = new WindowUniformGrid
+            var window = new WindowUniformGrid
             {
                 Left = Left + Width,
                 Top = Top,
             };
-            windowUniformGrid.ShowDialog();
+            window.ShowDialog();
         }
 
         private void ButtonCreateGridSplitter_Click(object sender, RoutedEventArgs e)
         {
-            var windowGridSplitter = new WindowGridSplitter
+            var window = new WindowGridSplitter
             {
                 Left = Left + Width,
                 Top = Top,
             };
-            windowGridSplitter.ShowDialog();
+            window.ShowDialog();
         }
 
         private void ButtonCreateStackPanel_Click(object sender, RoutedEventArgs e)
         {
-            var windowStackPanel = new WindowStackPanel
+            var window = new WindowStackPanel
             {
                 Left = Left + Width,
                 Top = Top,
             };
-            windowStackPanel.ShowDialog();
+            window.ShowDialog();
+        }
+
+        private void ButtonCreateDockPanel_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new WindowDockPanel
+            {
+                Left = Left + Width,
+                Top = Top,
+            };
+            window.ShowDialog();
+        }
+
+        private void ButtonCreateWrapPanel_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new WindowWrapPanel
+            {
+                Left = Left + Width,
+                Top = Top,
+            };
+            window.ShowDialog();
+        }
+
+        private void ButtonCreateCanvas_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new WindowCanvas
+            {
+                Left = Left + Width,
+                Top = Top,
+            };
+            window.ShowDialog();
         }
     }
 }
