@@ -2,6 +2,10 @@
 Example WPF.
 https://metanit.com/sharp/wpf/
 ====================================================================================================
+Object in XAML:
+- Class.
+- StaticResource.
+Content control:
 - Grid.
 - UniformGrid.
 - GridSplitter.

@@ -3,11 +3,11 @@
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for WindowDockPanel.xaml
+    /// Interaction logic for WindowCollection.xaml
     /// </summary>
-    public partial class WindowDockPanel : Window
+    public partial class WindowStaticResource : Window
     {
-        public WindowDockPanel()
+        public WindowStaticResource()
         {
             InitializeComponent();
         }

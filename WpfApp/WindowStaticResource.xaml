@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp.WindowStaticResource"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="WindowCollection" Height="150" Width="400" ResizeMode="NoResize" FontSize="24">
+    <Window.Resources>
+        <collections:ArrayList x:Key="WeekDays">
+            <system:String>Monday</system:String>
+            <system:String>Tuesday</system:String>
+            <system:String>Wednesday</system:String>
+            <system:String>Thursday</system:String>
+            <system:String>Friday</system:String>
+            <system:String>Saturday</system:String>
+            <system:String>Sunday</system:String>
+        </collections:ArrayList>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontSize="24" Text="Week days"
+            VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <ComboBox Grid.Row="1" FontSize="24" VerticalAlignment="Center" ItemsSource="{StaticResource WeekDays}"></ComboBox>
+    </Grid>
+</Window>

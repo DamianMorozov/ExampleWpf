@@ -58,6 +58,12 @@
     <Compile Include="WindowCanvas.xaml.cs">
       <DependentUpon>WindowCanvas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowClass.xaml.cs">
+      <DependentUpon>WindowClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowStaticResource.xaml.cs">
+      <DependentUpon>WindowStaticResource.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowDockPanel.xaml.cs">
       <DependentUpon>WindowDockPanel.xaml</DependentUpon>
     </Compile>
@@ -74,6 +80,14 @@
       <DependentUpon>WindowWrapPanel.xaml</DependentUpon>
     </Compile>
     <Page Include="WindowCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowStaticResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

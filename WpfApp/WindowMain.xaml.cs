@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
 namespace WpfApp
 {
@@ -13,69 +12,91 @@ namespace WpfApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CreateWindow(WindowType windowType)
         {
-            MessageBox.Show(FieldSome.Text);
+            Window window = null;
+            switch (windowType)
+            {
+                case WindowType.WindowClass:
+                    window = new WindowClass();
+                    break;
+                case WindowType.WindowStaticResource:
+                    window = new WindowStaticResource();
+                    break;
+                case WindowType.WindowCanvas:
+                    window = new WindowCanvas();
+                    break;
+                case WindowType.WindowDockPanel:
+                    window = new WindowDockPanel();
+                    break;
+                case WindowType.WindowGridSplitter:
+                    window = new WindowGridSplitter();
+                    break;
+                case WindowType.WindowStackPanel:
+                    window = new WindowStackPanel();
+                    break;
+                case WindowType.WindowUniformGrid:
+                    window = new WindowUniformGrid();
+                    break;
+                case WindowType.WindowWrapPanel:
+                    window = new WindowWrapPanel();
+                    break;
+            }
+            window.Left = Left + Width;
+            window.Top = Top;
+            window.ShowDialog();
+        }
+
+        private void ButtonClass_Click(object sender, RoutedEventArgs e)
+        {
+            CreateWindow(WindowType.WindowClass);
+        }
+
+        private void ButtonStaticResource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateWindow(WindowType.WindowStaticResource);
         }
 
         private void ButtonCreateUniformGrid_Click(object sender, RoutedEventArgs e)
         {
-            var window = new WindowUniformGrid
-            {
-                Left = Left + Width,
-                Top = Top,
-            };
-            window.ShowDialog();
+            CreateWindow(WindowType.WindowUniformGrid);
         }
 
         private void ButtonCreateGridSplitter_Click(object sender, RoutedEventArgs e)
         {
-            var window = new WindowGridSplitter
-            {
-                Left = Left + Width,
-                Top = Top,
-            };
-            window.ShowDialog();
+            CreateWindow(WindowType.WindowGridSplitter);
         }
 
         private void ButtonCreateStackPanel_Click(object sender, RoutedEventArgs e)
         {
-            var window = new WindowStackPanel
-            {
-                Left = Left + Width,
-                Top = Top,
-            };
-            window.ShowDialog();
+            CreateWindow(WindowType.WindowStackPanel);
         }
 
         private void ButtonCreateDockPanel_Click(object sender, RoutedEventArgs e)
         {
-            var window = new WindowDockPanel
-            {
-                Left = Left + Width,
-                Top = Top,
-            };
-            window.ShowDialog();
+            CreateWindow(WindowType.WindowDockPanel);
         }
 
         private void ButtonCreateWrapPanel_Click(object sender, RoutedEventArgs e)
         {
-            var window = new WindowWrapPanel
-            {
-                Left = Left + Width,
-                Top = Top,
-            };
-            window.ShowDialog();
+            CreateWindow(WindowType.WindowWrapPanel);
         }
 
         private void ButtonCreateCanvas_Click(object sender, RoutedEventArgs e)
         {
-            var window = new WindowCanvas
-            {
-                Left = Left + Width,
-                Top = Top,
-            };
-            window.ShowDialog();
+            CreateWindow(WindowType.WindowCanvas);
         }
+    }
+
+    public enum WindowType
+    {
+        WindowClass,
+        WindowStaticResource,
+        WindowCanvas,
+        WindowDockPanel,
+        WindowGridSplitter,
+        WindowStackPanel,
+        WindowUniformGrid,
+        WindowWrapPanel,
     }
 }
