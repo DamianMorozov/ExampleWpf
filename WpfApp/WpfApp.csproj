@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="WindowBindingControl.xaml.cs">
+      <DependentUpon>WindowBindingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowBindingSource.xaml.cs">
+      <DependentUpon>WindowBindingSource.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowCanvas.xaml.cs">
       <DependentUpon>WindowCanvas.xaml</DependentUpon>
     </Compile>
@@ -79,6 +85,14 @@
     <Compile Include="WindowWrapPanel.xaml.cs">
       <DependentUpon>WindowWrapPanel.xaml</DependentUpon>
     </Compile>
+    <Page Include="WindowBindingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowBindingSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowCanvas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

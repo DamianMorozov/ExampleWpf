@@ -41,6 +41,12 @@ namespace WpfApp
                 case WindowType.WindowWrapPanel:
                     window = new WindowWrapPanel();
                     break;
+                case WindowType.WindowBindingControl:
+                    window = new WindowBindingControl();
+                    break;
+                case WindowType.WindowBindingSource:
+                    window = new WindowBindingSource();
+                    break;
             }
             window.Left = Left + Width;
             window.Top = Top;
@@ -86,6 +92,16 @@ namespace WpfApp
         {
             CreateWindow(WindowType.WindowCanvas);
         }
+
+        private void ButtonCreateBindingControl_Click(object sender, RoutedEventArgs e)
+        {
+            CreateWindow(WindowType.WindowBindingControl);
+        }
+
+        private void ButtonCreateBindingSource_Click(object sender, RoutedEventArgs e)
+        {
+            CreateWindow(WindowType.WindowBindingSource);
+        }
     }
 
     public enum WindowType
@@ -98,5 +114,7 @@ namespace WpfApp
         WindowStackPanel,
         WindowUniformGrid,
         WindowWrapPanel,
+        WindowBindingControl,
+        WindowBindingSource,
     }
 }

@@ -7,13 +7,15 @@
         xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="400" ResizeMode="NoResize" FontSize="24">
+        Title="MainWindow" Height="400" Width="500" ResizeMode="NoResize" FontSize="24">
     <Grid Margin="0" ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
             <ColumnDefinition Width="1.5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -79,6 +81,25 @@
         <Button Grid.Column="1" Grid.Row="7" Content="Example Canvas" FontSize="24" Click="ButtonCreateCanvas_Click">
             <Button.Background>
                 <SolidColorBrush Opacity="0.7" Color="Lime" />
+            </Button.Background>
+        </Button>
+        <Border Grid.Column="0" Grid.Row="8" Grid.RowSpan="2" BorderThickness="2" BorderBrush="Blue">
+            <TextBlock FontSize="24" Foreground="Blue" Text="Binding" 
+                TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"
+                >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Border>
+        <Button Grid.Column="1" Grid.Row="8" Content="Example Binding to control" FontSize="24" Click="ButtonCreateBindingControl_Click">
+            <Button.Background>
+                <SolidColorBrush Opacity="0.8" Color="Lime" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="9" Content="Example Binding to source" FontSize="24" Click="ButtonCreateBindingSource_Click">
+            <Button.Background>
+                <SolidColorBrush Opacity="0.9" Color="Lime" />
             </Button.Background>
         </Button>
     </Grid>

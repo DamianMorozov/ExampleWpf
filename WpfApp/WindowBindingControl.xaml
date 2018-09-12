@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp.WindowBindingControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="WindowBindingControl" Height="200" Width="400" ResizeMode="NoResize">
+    <Grid ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Grid.Column="0" x:Name="textBox1" FontSize="20" Text="Input text 1 here" TextAlignment="Center"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="textBox2" FontSize="20" Text="Enter text 2 here" TextAlignment="Center"></TextBox>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" 
+            Text="{Binding ElementName=textBox1, Path=Text, IsAsync=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+            FontSize="20" TextAlignment="Center" x:Name="textBlock"></TextBlock>
+        <Button Grid.Row="2" Grid.Column="0" FontSize="20" Content="Set bind to textBox1" 
+            Click="ButtonSetBindToTextBox1_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="1" FontSize="20" Content="Set bind to textBox2"
+            Click="ButtonSetBindToTextBox2_Click"></Button>
+        <Button Grid.Row="3" Grid.Column="0" FontSize="20" Content="Clear one last bind"
+            Click="ButtonClearOneBind_Click"></Button>
+        <Button Grid.Row="3" Grid.Column="1" FontSize="20" Content="Clear all binds"
+            Click="ButtonClearAllBinds_Click"></Button>
+    </Grid>
+</Window>
