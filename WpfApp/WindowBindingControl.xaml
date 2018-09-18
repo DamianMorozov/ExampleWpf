@@ -21,7 +21,7 @@
         <TextBox Grid.Row="0" Grid.Column="1" x:Name="textBox2" FontSize="20" Text="Enter text 2 here" TextAlignment="Center"></TextBox>
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" 
             Text="{Binding ElementName=textBox1, Path=Text, IsAsync=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-            FontSize="20" TextAlignment="Center" x:Name="textBlock"></TextBlock>
+            FontSize="20" TextAlignment="Center" x:Name="textBlock"/>
         <Button Grid.Row="2" Grid.Column="0" FontSize="20" Content="Set bind to textBox1" 
             Click="ButtonSetBindToTextBox1_Click"></Button>
         <Button Grid.Row="2" Grid.Column="1" FontSize="20" Content="Set bind to textBox2"

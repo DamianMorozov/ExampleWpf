@@ -47,6 +47,9 @@ namespace WpfApp
                 case WindowType.WindowBindingSource:
                     window = new WindowBindingSource();
                     break;
+                case WindowType.WindowControlButton:
+                    window = new WindowControlButton();
+                    break;
             }
             window.Left = Left + Width;
             window.Top = Top;
@@ -102,6 +105,11 @@ namespace WpfApp
         {
             CreateWindow(WindowType.WindowBindingSource);
         }
+
+        private void ButtonCreateControlButton_Click(object sender, RoutedEventArgs e)
+        {
+            CreateWindow(WindowType.WindowControlButton);
+        }
     }
 
     public enum WindowType
@@ -116,5 +124,6 @@ namespace WpfApp
         WindowWrapPanel,
         WindowBindingControl,
         WindowBindingSource,
+        WindowControlButton,
     }
 }

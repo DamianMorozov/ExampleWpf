@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApp.WindowControlButton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="WindowControlButton" Height="300" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Content="Accept (press Enter)" FontSize="20" IsDefault="True"
+                Click="ButtonAccept_Click">
+            <Button.Background>
+                <SolidColorBrush Opacity="0.8" Color="LightGray" />
+            </Button.Background>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="1" Content="Cancel (press Escape)" FontSize="20" IsCancel="True"
+                Click="ButtonEsc_Click">
+            <Button.Background>
+                <SolidColorBrush Opacity="0.8" Color="LightGray" />
+            </Button.Background>
+        </Button>
+        <RepeatButton Grid.Row="1" Grid.Column="0" Content="RepeatButton" FontSize="20" 
+            Click="RepeatButton_Click" Delay="1000" Interval="100">
+            <RepeatButton.Background>
+                <SolidColorBrush Opacity="1.0" Color="LightGray" />
+            </RepeatButton.Background>
+        </RepeatButton>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="RepeatButton" FontSize="20" x:Name="textBlockOut"
+            TextAlignment="Center" VerticalAlignment="Center">
+        </TextBlock>
+        <ToggleButton Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="toggleButton.IsChecked = false" FontSize="20" 
+            x:Name="toggleButton"
+            Click="ToggleButton_Click" IsThreeState="True" IsChecked="False">
+            <ToggleButton.Background>
+                <SolidColorBrush Opacity="1.0" Color="LightGray" />
+            </ToggleButton.Background>
+        </ToggleButton>
+    </Grid>
+</Window>
