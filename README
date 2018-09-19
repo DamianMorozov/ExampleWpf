@@ -3,7 +3,7 @@ Example WPF.
 ====================================================================================================
 WpfApp
 ------
-https://metanit.com/sharp/wpf/
+https://metanit.com/sharp/wpf
 .NET Framework 4.7.1
 C# 7.3
 ----------------------------------------------------------------------------------------------------
@@ -22,4 +22,13 @@ Control ButtonBase:
 - Button.
 - RepeatButton.
 - ToogleButton.
+====================================================================================================
+Switching between WPF XAML views using MVVM DataTriggers.
+---------------------------------------------------------
+http://www.technical-recipes.com/2016/switching-between-wpf-xaml-views-using-mvvm-datatriggers
+http://qaru.site/questions/81832/wpf-mvvm-why-use-contentcontrol-datatemplate-views-rather-than-straight-xaml-window-views
+https://www.nuget.org/packages/PropertyChanged.Fody
+.NET Framework 4.7.1
+C# 7.3
+PropertyChanged.Fody 2.5.11
 ====================================================================================================
