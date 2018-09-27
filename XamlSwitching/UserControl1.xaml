@@ -8,7 +8,7 @@
              d:DesignHeight="230" d:DesignWidth="400">
     <Grid Background="AliceBlue">
         <TextBlock FontSize="24" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
-            First UserControl
+            1 UserControl
         </TextBlock>
     </Grid>
 </UserControl>

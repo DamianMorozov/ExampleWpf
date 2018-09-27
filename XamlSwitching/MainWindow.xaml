@@ -16,9 +16,13 @@
         <DataTemplate x:Name="userControl2" x:Key="DataTemplate2" DataType="{x:Type local:MainWindowViewModel}">
             <local:UserControl2 />
         </DataTemplate>
+        <DataTemplate x:Name="userControl3" x:Key="DataTemplate3" DataType="{x:Type local:MainWindowViewModel}">
+            <local:UserControl3 />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -27,9 +31,10 @@
             <RowDefinition Height="1.2*"></RowDefinition>
             <RowDefinition Height="8*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="1" Content="First UserConrol" Margin="2,2,2,2" Click="Button1_Click"/>
-        <Button Grid.Column="1" Grid.Row="1" Content="Second UserConrol" Margin="2,2,2,2" Click="Button2_Click"/>
-        <ContentControl x:Name="contentControl" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
+        <Button Grid.Column="0" Grid.Row="1" Content="1 UserConrol" Margin="2,2,2,2" Click="Button1_Click"/>
+        <Button Grid.Column="1" Grid.Row="1" Content="2 UserConrol" Margin="2,2,2,2" Click="Button2_Click"/>
+        <Button Grid.Column="2" Grid.Row="1" Content="3 UserConrol" Margin="2,2,2,2" Click="Button3_Click"/>
+        <ContentControl x:Name="contentControl" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2">
             <ContentControl.Style>
                 <Style TargetType="{x:Type ContentControl}">
                     <Setter Property="ContentTemplate" Value="{StaticResource DataTemplate1}" />
@@ -41,6 +46,10 @@
                         <DataTrigger Binding="{Binding SwitchView, AsyncState=True, 
                             Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Value="2">
                             <Setter Property="ContentTemplate" Value="{StaticResource DataTemplate2}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SwitchView, AsyncState=True, 
+                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Value="3">
+                            <Setter Property="ContentTemplate" Value="{StaticResource DataTemplate3}" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>

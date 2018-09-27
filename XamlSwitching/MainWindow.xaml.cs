@@ -3,7 +3,7 @@
 namespace XamlSwitching
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Logic of interaction for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -14,23 +14,25 @@ namespace XamlSwitching
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            //UserControl1 view1 = new UserControl1();
-            //contentControl.DataContext = null;
-            //contentControl.DataContext = view1.DataContext;
-            if (contentControl.DataContext is MainWindowViewModel dc)
+            if (contentControl.DataContext is MainWindowViewModel dataContext)
             {
-                dc.SwitchView = 1;
+                dataContext.SwitchView = 1;
             }
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-            //UserControl2 view2 = new UserControl2();
-            //contentControl.DataContext = null;
-            //contentControl.DataContext = view2.DataContext;
-            if (contentControl.DataContext is MainWindowViewModel dc)
+            if (contentControl.DataContext is MainWindowViewModel dataContext)
             {
-                dc.SwitchView = 2;
+                dataContext.SwitchView = 2;
+            }
+        }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            if (contentControl.DataContext is MainWindowViewModel dataContext)
+            {
+                dataContext.SwitchView = 3;
             }
         }
     }
