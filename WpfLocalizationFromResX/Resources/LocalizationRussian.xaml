@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- Русская локализация -->
+    <system:String x:Key="textAppTitle">Пример WPF локализации</system:String>
+    <system:String x:Key="textDynamicResource">Динамичные ресурсы</system:String>
+    <system:String x:Key="textStaticResource">Статичные ресурсы</system:String>
+    <system:String x:Key="textEnglish">Английский</system:String>
+    <system:String x:Key="textRussian">Русский</system:String>
+</ResourceDictionary>
