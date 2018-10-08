@@ -3,9 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <!-- Русская локализация -->
-    <system:String x:Key="textAppTitle">Пример WPF локализации</system:String>
-    <system:String x:Key="textDynamicResource">Динамичные ресурсы</system:String>
-    <system:String x:Key="textStaticResource">Статичные ресурсы</system:String>
+    <system:String x:Key="textAppTitle">Пример ресурсов WPF</system:String>
+    <system:String x:Key="textResource">Ресурсы</system:String>
+    <system:String x:Key="textAddResource">Добавить ресурс цвета</system:String>
+    <system:String x:Key="textSetResource">Задать ресурс цвета</system:String>
+    <system:String x:Key="textDynamicResource">Динамичные ресурсы локализации</system:String>
+    <system:String x:Key="textStaticResource">Статичные ресурсы локализации</system:String>
     <system:String x:Key="textEnglish">Английский</system:String>
     <system:String x:Key="textRussian">Русский</system:String>
 </ResourceDictionary>

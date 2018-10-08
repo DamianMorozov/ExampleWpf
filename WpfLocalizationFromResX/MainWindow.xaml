@@ -5,18 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="WpfLocalizationFromResX"
     mc:Ignorable="d"
     Title="{DynamicResource textAppTitle}"
-    Height="100" Width="500" MaxWidth="500" MaxHeight="100" ResizeMode="NoResize" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-    <!-- Resources -->
-    <Window.Resources>
-        <ResourceDictionary Source="Resources/LocalizationEnglish.xaml"></ResourceDictionary>
-    </Window.Resources>
+    Height="100" Width="600" MaxWidth="600" MaxHeight="100" ResizeMode="NoResize" ScrollViewer.VerticalScrollBarVisibility="Disabled">
     <!-- Grid -->
     <Grid>
         <!-- Columns -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -24,48 +21,75 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <!-- Static resources -->
+        <!-- Resources -->
         <TextBlock
+            Name="textBlockResources"
             Grid.Column="0"
             Grid.Row="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment ="Stretch"
             TextAlignment="Center"
-            Text ="{StaticResource textStaticResource}"
-            Background="{StaticResource colorBrushWhiteRed}"
+            Text ="{StaticResource textResource}"
+            Background="{StaticResource colorLightBlueWhite}"
         />
         <Button 
             Grid.Column="1"
             Grid.Row="0"
-            Content="{StaticResource textEnglish}"
+            Content="{StaticResource textAddResource}"
+            Background="{StaticResource colorBrushWhiteBlue}"
+            Click="buttonAddResources_Click"
         />
         <Button 
             Grid.Column="2"
             Grid.Row="0"
+            Content="{StaticResource textSetResource}"
+            Background="{StaticResource colorBrushWhiteBlue}"
+            Click="buttonSetResources_Click"
+        />
+        <!-- Static resources -->
+        <TextBlock
+            Grid.Column="0"
+            Grid.Row="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment ="Stretch"
+            TextAlignment="Center"
+            Text ="{StaticResource textStaticResource}"
+            Background="{StaticResource colorLightBlueWhite}"
+        />
+        <Button 
+            Grid.Column="1"
+            Grid.Row="1"
+            Content="{StaticResource textEnglish}"
+            Background="{StaticResource colorBrushWhiteBlue}"
+        />
+        <Button 
+            Grid.Column="2"
+            Grid.Row="1"
             Content="{StaticResource textRussian}"
             Background="{StaticResource colorBrushWhiteBlue}"
         />
         <!-- Dynamic resources -->
         <TextBlock
             Grid.Column="0"
-            Grid.Row="1"
+            Grid.Row="2"
             HorizontalAlignment="Stretch"
             VerticalAlignment ="Stretch"
             TextAlignment="Center"
             Text="{DynamicResource textDynamicResource}"
-            Background="{DynamicResource colorBrushWhiteRed}"
+            Background="{DynamicResource colorLightBlueWhite}"
         />
         <Button 
             Grid.Column="1"
-            Grid.Row="1"
+            Grid.Row="2"
             Content="{DynamicResource textEnglish}"
             Background="{DynamicResource colorBrushWhiteBlue}"
             Click="dynamicEnglish_Click"
         />
         <Button 
             Grid.Column="2"
-            Grid.Row="1"
+            Grid.Row="2"
             Content="{StaticResource textRussian}"
             Background="{DynamicResource colorBrushWhiteBlue}"
             Click="dynamicRussian_Click"

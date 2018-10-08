@@ -1,11 +1,16 @@
 ﻿<ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Цвета -->
+    <!-- Colors -->
+    <SolidColorBrush x:Key="colorRedStyle" Color="Red" />
+    <LinearGradientBrush x:Key="colorLightBlueWhite" StartPoint="0.7,1" EndPoint="1,0">
+        <GradientStop Color="LightBlue" Offset="0" />
+        <GradientStop Color="White" Offset="1" />
+    </LinearGradientBrush>
     <LinearGradientBrush x:Key="colorBrushWhiteBlue">
         <GradientStopCollection>
             <GradientStop Color="White" Offset="0" />
-            <GradientStop Color="Blue" Offset="1" />
+            <GradientStop Color="Blue" Offset="2" />
         </GradientStopCollection>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="colorBrushWhiteRed">
