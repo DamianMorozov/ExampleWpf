@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace WpfLocalizationFromResX
 {
-    public enum Localization { English, Russian }
+    public enum Languages { ruRU, enUS }
 
     public sealed class SingletonLocalization
     {
@@ -22,11 +22,32 @@ namespace WpfLocalizationFromResX
 
         #endregion
 
-        public CultureInfo Language
+        private void LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            SetLanguage(Properties.Settings.Default.DefaultLanguage);
+        }
+
+        /// <summary>
+        /// Localization language like Localization
+        /// </summary>
+        [Obsolete(@"Поле открыто только для поля CultureInfo")]
+        private Languages _languageAsLocalization;
+
+#pragma warning disable 0612, 0618
+        /// <summary>
+        /// Localization language like CultureInfo
+        /// </summary>
+        private CultureInfo _languageAsCultureInfo
         {
             get
             {
-                return System.Threading.Thread.CurrentThread.CurrentUICulture;
+                switch (_languageAsLocalization)
+                {
+                    case Languages.ruRU:
+                        return new CultureInfo("ru-RU");
+                    default:
+                        return new CultureInfo("en-US");
+                }
             }
             set
             {
@@ -39,12 +60,16 @@ namespace WpfLocalizationFromResX
 
                 // Create ResourceDictionary for new CultureInfo
                 var resourceDictionary = new ResourceDictionary();
-                switch (value.Name)
+                switch (value.Name.ToUpper())
                 {
-                    case "ru-RU":
+                    case "RU-RU":
+                        _languageAsLocalization = Languages.ruRU;
+                        System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
                         resourceDictionary.Source = new Uri("pack://application:,,,/Resources/LocalizationRussian.xaml");
                         break;
                     default:
+                        _languageAsLocalization = Languages.enUS;
+                        System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
                         resourceDictionary.Source = new Uri("pack://application:,,,/Resources/LocalizationEnglish.xaml");
                         break;
                 }
@@ -68,33 +93,88 @@ namespace WpfLocalizationFromResX
                 }
 
                 // Event
-                LanguageChanged(Application.Current, new EventArgs());
+                Changed?.Invoke(Application.Current, new EventArgs());
             }
         }
+#pragma warning restore 0612, 0618
 
-        public void SetLanguage(Localization language)
+        /// <summary>
+        /// Get localization language like CultureInfo
+        /// </summary>
+        /// <returns></returns>
+        public CultureInfo GetLanguageAsCultureInfo()
         {
-            switch (language)
+            switch (_languageAsCultureInfo.Name.ToUpper())
             {
-                case Localization.English:
-                    Language = new CultureInfo("en-US");
+                case "RU-RU":
+                    return new CultureInfo("ru-RU");
+                default:
+                    return new CultureInfo("en-US");
+            }
+        }
+
+        /// <summary>
+        /// Get localization language like Localization
+        /// </summary>
+        /// <returns></returns>
+        public Languages GetLanguageAsLocalization()
+        {
+            switch (_languageAsCultureInfo.Name.ToUpper())
+            {
+                case "RU-RU":
+                    return Languages.ruRU;
+                default:
+                    return Languages.enUS;
+            }
+        }
+
+        /// <summary>
+        /// Set localization language
+        /// </summary>
+        /// <param name="cultureInfo"></param>
+        public void SetLanguage(CultureInfo cultureInfo)
+        {
+            _languageAsCultureInfo = cultureInfo;
+        }
+
+        /// <summary>
+        /// Set localization language
+        /// </summary>
+        /// <param name="cultureInfo"></param>
+        public void SetLanguage(Languages localization)
+        {
+            switch (localization)
+            {
+                case Languages.ruRU:
+                    _languageAsCultureInfo = new CultureInfo("ru-RU");
                     break;
-                case Localization.Russian:
-                    Language = new CultureInfo("ru-RU");
+                default:
+                    _languageAsCultureInfo = new CultureInfo("en-US");
                     break;
             }
         }
 
-        private void LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-            Language = Properties.Settings.Default.DefaultLanguage;
-        }
+        public event EventHandler Changed;
 
-        private void LanguageChanged(Object sender, EventArgs e)
+        /// <summary>
+        /// Get resource string
+        /// </summary>
+        public string GetResourceString(string resourceName)
         {
-            Properties.Settings.Default.DefaultLanguage = Language;
-            Properties.Settings.Default.Save();
+            string result = null;
+            ResourceDictionary resourceDictionary = null;
+            if (Application.Current.Resources.MergedDictionaries.Count > 0)
+                resourceDictionary = (
+                    from dict in Application.Current.Resources.MergedDictionaries
+                    where dict.Source != null && dict.Source.OriginalString.Contains("Resources/Localization")
+                    select dict).First();
+            if (resourceDictionary != null)
+            {
+                int iDict = Application.Current.Resources.MergedDictionaries.IndexOf(resourceDictionary);
+                if (Application.Current.Resources.MergedDictionaries[iDict].Contains(resourceName))
+                    result = Application.Current.Resources[resourceName].ToString();
+            }
+            return result;
         }
-
     }
 }

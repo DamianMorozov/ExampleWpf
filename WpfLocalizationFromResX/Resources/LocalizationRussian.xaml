@@ -11,4 +11,6 @@
     <system:String x:Key="textStaticResource">Статичные ресурсы локализации</system:String>
     <system:String x:Key="textEnglish">Английский</system:String>
     <system:String x:Key="textRussian">Русский</system:String>
+    <system:String x:Key="textGetSome">Получить текст из ресурса</system:String>
+    <system:String x:Key="textGetSomeResult">Это текст из ресурса</system:String>
 </ResourceDictionary>

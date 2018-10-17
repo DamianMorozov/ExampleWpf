@@ -44,9 +44,9 @@
         <Button 
             Grid.Column="2"
             Grid.Row="0"
-            Content="{StaticResource textSetResource}"
+            Content="{StaticResource textGetSome}"
             Background="{StaticResource colorBrushWhiteBlue}"
-            Click="buttonSetResources_Click"
+            Click="buttonGetResource_Click"
         />
         <!-- Static resources -->
         <TextBlock

@@ -11,4 +11,6 @@
     <system:String x:Key="textStaticResource">Static Resource Localization</system:String>
     <system:String x:Key="textEnglish">English</system:String>
     <system:String x:Key="textRussian">Russian</system:String>
+    <system:String x:Key="textGetSome">Get text from resource</system:String>
+    <system:String x:Key="textGetSomeResult">This is text from resource</system:String>
 </ResourceDictionary>

@@ -16,12 +16,12 @@ namespace WpfLocalizationFromResX
 
         private void dynamicEnglish_Click(object sender, RoutedEventArgs e)
         {
-            localization.SetLanguage(Localization.English);
+            localization.SetLanguage(Languages.enUS);
         }
 
         private void dynamicRussian_Click(object sender, RoutedEventArgs e)
         {
-            localization.SetLanguage(Localization.Russian);
+            localization.SetLanguage(Languages.ruRU);
         }
 
         private void buttonAddResources_Click(object sender, RoutedEventArgs e)
@@ -40,15 +40,9 @@ namespace WpfLocalizationFromResX
                 textBlockResources.Background = getColor;
         }
 
-        private void buttonSetResources_Click(object sender, RoutedEventArgs e)
+        private void buttonGetResource_Click(object sender, RoutedEventArgs e)
         {
-            // resource
-            var colorBrush = new LinearGradientBrush();
-            colorBrush.GradientStops.Add(new GradientStop(Colors.Yellow, 0));
-            colorBrush.GradientStops.Add(new GradientStop(Colors.Red, 1));
-
-            if (Resources.Contains("colorBrushWhiteBlue"))
-                Resources["colorBrushWhiteBlue"] = colorBrush;
+            textBlockResources.Text = localization.GetResourceString("textGetSomeResult");
         }
     }
 }
