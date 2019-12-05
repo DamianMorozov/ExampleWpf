@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
+        xmlns:model="clr-namespace:WpfApp.Model"
         mc:Ignorable="d"
         Title="WindowBindingSource" Height="200" Width="400">
     <Window.Resources>
-        <local:ClassPhone x:Key="phoneSamsung1" Company="Samsung" Name="S1" Price="1000"></local:ClassPhone>
-        <local:ClassPhone x:Key="phoneSamsung2" Company="Samsung" Name="S2" Price="2000"></local:ClassPhone>
+        <model:ClassPhone x:Key="phoneSamsung1" Company="Samsung" Name="S1" Price="1000"></model:ClassPhone>
+        <model:ClassPhone x:Key="phoneSamsung2" Company="Samsung" Name="S2" Price="2000"></model:ClassPhone>
     </Window.Resources>
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>

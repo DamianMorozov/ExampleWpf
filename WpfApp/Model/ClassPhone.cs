@@ -1,4 +1,4 @@
-﻿namespace WpfApp
+﻿namespace WpfApp.Model
 {
     public class ClassPhone
     {

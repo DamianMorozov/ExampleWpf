@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:local="clr-namespace:WpfApp"
+        xmlns:model="clr-namespace:WpfApp.Model"
         mc:Ignorable="d"
-        Title="WindowClass" Height="300" Width="400" ResizeMode="NoResize" FontSize="24">
+        Title="WindowClass" Height="300" Width="400" ResizeMode="NoResize" FontSize="15">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -13,25 +15,53 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" FontSize="24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--#region Buttons -->
+        <Button Grid.Row="0">
             <Button.Content>
-                <local:ClassPhone Name="Nokia" Price="1234" />
+                <model:ClassPhone Name="Nokia" Price="1234" />
             </Button.Content>
         </Button>
-        <Button Grid.Row="1" FontSize="24">
+        <Button Grid.Row="1">
             <Button.Content>
-                <local:ClassPhone Name="Samsung" Price="2345" />
+                <model:ClassPhone Name="Samsung" Price="2345" />
             </Button.Content>
         </Button>
-        <Button Grid.Row="2" FontSize="24">
+        <Button Grid.Row="2">
             <Button.Content>
-                <local:ClassPhone Name="Philips" Price="3214" />
+                <model:ClassPhone Name="Philips" Price="3214" />
             </Button.Content>
         </Button>
-        <Button Grid.Row="3" FontSize="24">
+        <Button Grid.Row="3">
             <Button.Content>
-                <local:ClassPhone Name="Iphone" Price="5421" />
+                <model:ClassPhone Name="Iphone" Price="5421" />
             </Button.Content>
         </Button>
+        <!--#endregion-->
+        <!--#region ListView -->
+        <ListView Grid.Column="1" Grid.Row="0" Grid.RowSpan="4"
+            ItemsSource="{DynamicResource ResourceKey=phones}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Company}">Company</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Name</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <col:ArrayList x:Key="phones">
+                    <model:ClassPhone Company="Samsung" Name="A30" Price="100"></model:ClassPhone>
+                    <model:ClassPhone Company="Samsung" Name="A40" Price="200"></model:ClassPhone>
+                    <model:ClassPhone Company="Samsung" Name="A50" Price="300"></model:ClassPhone>
+                    <model:ClassPhone Company="Samsung" Name="A60" Price="400"></model:ClassPhone>
+                    <model:ClassPhone Company="Samsung" Name="A70" Price="500"></model:ClassPhone>
+                    <model:ClassPhone Company="Samsung" Name="A80" Price="600"></model:ClassPhone>
+                </col:ArrayList>
+            </ListView.Resources>
+        </ListView>
+        <!--#endregion-->
     </Grid>
 </Window>
