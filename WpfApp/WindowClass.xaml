@@ -7,13 +7,23 @@
         xmlns:local="clr-namespace:WpfApp"
         xmlns:model="clr-namespace:WpfApp.Model"
         mc:Ignorable="d"
-        Title="WindowClass" Height="300" Width="400" ResizeMode="NoResize" FontSize="15">
+        Title="WindowClass" Height="400" Width="400" ResizeMode="NoResize" FontSize="15">
+    <Window.Resources>
+        <col:ArrayList x:Key="phones">
+            <model:ClassPhone Company="Samsung" Name="A30" Price="100"></model:ClassPhone>
+            <model:ClassPhone Company="Samsung" Name="A40" Price="200"></model:ClassPhone>
+            <model:ClassPhone Company="Samsung" Name="A50" Price="300"></model:ClassPhone>
+            <model:ClassPhone Company="Samsung" Name="A60" Price="400"></model:ClassPhone>
+            <model:ClassPhone Company="Samsung" Name="A70" Price="500"></model:ClassPhone>
+        </col:ArrayList>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -51,17 +61,12 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
                 </GridView>
             </ListView.View>
-            <ListView.Resources>
-                <col:ArrayList x:Key="phones">
-                    <model:ClassPhone Company="Samsung" Name="A30" Price="100"></model:ClassPhone>
-                    <model:ClassPhone Company="Samsung" Name="A40" Price="200"></model:ClassPhone>
-                    <model:ClassPhone Company="Samsung" Name="A50" Price="300"></model:ClassPhone>
-                    <model:ClassPhone Company="Samsung" Name="A60" Price="400"></model:ClassPhone>
-                    <model:ClassPhone Company="Samsung" Name="A70" Price="500"></model:ClassPhone>
-                    <model:ClassPhone Company="Samsung" Name="A80" Price="600"></model:ClassPhone>
-                </col:ArrayList>
-            </ListView.Resources>
         </ListView>
+        <!--#endregion-->
+        <!--#region DataGrid -->
+        <DataGrid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+            ItemsSource="{DynamicResource ResourceKey=phones}">
+        </DataGrid>
         <!--#endregion-->
     </Grid>
 </Window>
